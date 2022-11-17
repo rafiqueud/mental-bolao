@@ -1,0 +1,69 @@
+{% extends "../sources/index.peb" %}
+{% block title %}Dashboard Page{% endblock %}
+{% block headExtra %}{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><span class="text-semibold"></span>Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-detached">
+                    <div class="content-detached">
+                        <div class="panel panel-flat">
+
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Lista</h5>
+                            </div>
+                            <table class="table table-bordered table-hover datatable-highlight"
+                                   id="lista">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Extra1</th>
+                                    <th>Extra2</th>
+                                    <th>Extra3</th>
+                                    <th>Extra4</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for lM in steps %}
+                                <tr>
+                                    <td>{{ lM.name }}</td>
+                                    <td>{{ lM.extra1 }}</td>
+                                    <td>{{ lM.extra2 }}</td>
+                                    <td>{{ lM.extra3 }}</td>
+                                    <td>{{ lM.extra4 }}</td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                    <li><a href="/dashboard/steps/{{ lM._id }}"><i
+                                                            class="icon-pencil7"></i> Editar </a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

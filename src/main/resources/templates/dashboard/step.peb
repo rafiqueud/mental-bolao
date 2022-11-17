@@ -1,0 +1,118 @@
+{% extends "../sources/index.peb" %}
+{% block title %} Cadastrar {% endblock %}
+{% block headExtra %}
+<script type='text/javascript' src='../../../../assets/js/plugins/forms/tags/tokenfield.min.js'></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/ui/prism.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/uploaders/plupload/plupload.full.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/uploaders/plupload/plupload.queue.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/autosize.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/formatter.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/passy.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_controls_extended.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_inputs.js"></script>
+
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/duallistbox.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_dual_listboxes.js"></script>
+{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="content">
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"> Insert/Edit Step </h5>
+                    </div>
+                    <div class="panel-body" style="display: block;">
+
+                        <form class="form-horizontal" action="/dashboard/steps" method="post">
+                            <input type="hidden" name="stepId" id="stepId"
+                                   value="{{ step.id }}">
+                            <div class="tabbable">
+                                <ul class="nav nav-xs nav-tabs nav-tabs-component nav-tabs-top">
+
+                                    <li class="active">
+                                        <a href="#Cadastrar" data-toggle="tab" aria-expanded="true">Cadastrar</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active in fade" id="Cadastrar">
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="name">Nome: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="name" id="name"
+                                                           class="form-control"
+                                                           value="{{ step.name }}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="name">Extra1: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="extra1" id="extra1"
+                                                           class="form-control"
+                                                           value="{{ step.extra1 }}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="name">Extra2: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="extra2" id="extra2"
+                                                           class="form-control"
+                                                           value="{{ step.extra2 }}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="name">Extra3: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="extra3" id="extra3"
+                                                           class="form-control"
+                                                           value="{{ step.extra3 }}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="name">Extra4: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="extra4" id="extra4"
+                                                           class="form-control"
+                                                           value="{{ step.extra4 }}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                </div><!-- tabContent -->
+                            </div><!-- tabbable -->
+                            <hr>
+
+                            <div class="text-right">
+                                <label class="grayText">Lembre de iniciar o envio antes de clicar no botão
+                                    salvar</label>
+                                <button type="submit" class="btn btn-primary">Salvar informações <i
+                                        class="icon-arrow-right14 position-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block footerExtra %}{% endblock %}

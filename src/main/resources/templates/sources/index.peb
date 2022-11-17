@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Sistema{% endblock %}</title>
+    {#<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet"
+          type="text/css">#}
+        <link href="../../../../assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+        <link href="../../../../assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="../../../../assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+        <link href="../../../../assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+        <link href="../../../../assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="../../../../assets/js/plugins/loaders/pace.min.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/core/libraries/jquery.min.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/core/libraries/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/plugins/loaders/blockui.min.js"></script>
+
+        <script type="text/javascript" src="../../../../assets/js/plugins/tables/datatables/datatables.min.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/plugins/forms/selects/select2.min.js"></script>
+
+        <script type="text/javascript" src="../../../../assets/js/core/app.js"></script>
+        <script type="text/javascript" src="../../../../assets/js/pages/datatables_advanced.js"></script>
+
+    {% block headExtra %}{% endblock %}
+</head>
+<body class="sidebar-xs ">
+{% block navbar %}
+<div class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <a class="navbar-brand text-semibold" href="../../../../dashboard">Sistema</a>
+        <div class="navbar-brand text-semibold"></div>
+    </div>
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <span><i class="icon-cog3"></i></span>
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="/dashboard"><i class="icon-home"></i>Home</a></li>
+
+                        <li><a href="/dashboard/teams"><i class="icon-steam"></i>Times</a></li>
+                        <li><a href="/dashboard/teams/new"><i class="icon-new"></i>Novo Time</a></li>
+
+                        <li><a href="/dashboard/steps"><i class="icon-circle-up2"></i>Etapas</a></li>
+                        <li><a href="/dashboard/steps/new"><i class="icon-circle-up2"></i>Nova Etapa</a></li>
+
+                        <li><a href="/dashboard/matches"><i class="icon-hammer"></i>Partidas</a></li>
+                        <li><a href="/dashboard/matches/new"><i class="icon-hammer"></i>Nova Partida</a></li>
+
+                        <li><a href="/dashboard/bets"><i class="icon-pencil"></i>Apostas</a></li>
+
+
+                        <li><a href="/logout"><i class="icon-switch2"></i>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+</div>
+{% endblock %}
+{% block sideBar %}{% endblock %}
+{% block content %}
+
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block footerExtra %}{% endblock %}
+{% block modais %}{% endblock %}
+</body>
+
+</html>

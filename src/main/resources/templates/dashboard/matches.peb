@@ -1,0 +1,75 @@
+{% extends "../sources/index.peb" %}
+{% block title %}Dashboard Page{% endblock %}
+{% block headExtra %}{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><span class="text-semibold"></span>Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-detached">
+                    <div class="content-detached">
+                        <div class="panel panel-flat">
+
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Lista</h5>
+                            </div>
+                            <table class="table table-bordered table-hover datatable-highlight"
+                                   id="lista">
+                                <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Data Legível</th>
+                                    <th>Time1</th>
+                                    <th>Time2</th>
+                                    <th>Gols Time 1</th>
+                                    <th>Gols Time 2</th>
+                                    <th>Final</th>
+                                    <th>Etapa</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for lM in matches %}
+                                <tr>
+                                    <td>{{ lM.matchDate }}</td>
+                                    <td>{{ lM.date }}</td>
+                                    <td>{{ lM.team1 }} <img src="{{ lM.team1Flag }}" width="30" height="30"/></td>
+                                    <td>{{ lM.team2 }} <img src="{{ lM.team2Flag }}" width="30" height="30"/></td>
+                                    <td>{{ lM.goalsTeam1 }}</td>
+                                    <td>{{ lM.goalsTeam2 }}</td>
+                                    <td>{{ lM.goalsTeam1 }} x {{ lM.goalsTeam2 }}</td>
+                                    <td>{{ lM.step }}</td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                    <li><a href="/dashboard/matches/{{ lM.matchId }}"><i
+                                                            class="icon-pencil7"></i> Editar </a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

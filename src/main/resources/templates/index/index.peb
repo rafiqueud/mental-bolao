@@ -1,0 +1,8 @@
+{% extends "../sources/index.peb" %}
+{% block title %} Welcome to the System{% endblock %}
+{% block headExtra %}
+{% endblock %}
+{% block navbar %}{% endblock %}
+{% block content %}
+System Server
+{% endblock %}

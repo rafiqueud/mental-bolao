@@ -1,0 +1,145 @@
+{% extends "../sources/index.peb" %}
+{% block title %} Cadastrar {% endblock %}
+{% block headExtra %}
+<script type='text/javascript' src='../../../../assets/js/plugins/forms/tags/tokenfield.min.js'></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/ui/prism.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/uploaders/plupload/plupload.full.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/uploaders/plupload/plupload.queue.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/styling/uniform.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/autosize.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/formatter.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/passy.js"></script>
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_controls_extended.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_inputs.js"></script>
+
+<script type='text/javascript' src="../../../../assets/js/plugins/forms/inputs/duallistbox.min.js"></script>
+<script type='text/javascript' src="../../../../assets/js/pages/form_dual_listboxes.js"></script>
+{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="content">
+                <div class="panel panel-flat">
+                    <div class="panel-heading">
+                        <h5 class="panel-title"> Insert/Edit Bet </h5>
+                    </div>
+                    <div class="panel-body" style="display: block;">
+
+                        <form class="form-horizontal" action="/dashboard/bets" method="post">
+                            <input type="hidden" name="betId" id="betId"
+                                   value="{{ bet.matchId }}">
+                            <div class="tabbable">
+                                <ul class="nav nav-xs nav-tabs nav-tabs-component nav-tabs-top">
+
+                                    <li class="active">
+                                        <a href="#Cadastrar" data-toggle="tab" aria-expanded="true">Cadastrar</a>
+                                    </li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active in fade" id="Cadastrar">
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="team1Name">Time1: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="team1Name" id="team1Name"
+                                                           class="form-control"
+                                                           value="{{ team1Name }}"
+                                                           placeholder="0"
+                                                           disabled>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="team2Name">Time2: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="team2Name" id="team2Name"
+                                                           class="form-control"
+                                                           value="{{ team2Name }}"
+                                                           placeholder="0"
+                                                           disabled>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="step">Etapa: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="step" id="step"
+                                                           class="form-control"
+                                                           value="{{ step }}"
+                                                           placeholder="0"
+                                                           disabled>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="matchDate">Data: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="matchDate" id="matchDate"
+                                                           class="form-control"
+                                                           value="{{ matchDate }}"
+                                                           placeholder="0"
+                                                           disabled>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="team1Goals">Aposta Gols {{ team1Name }}
+                                                    Goals: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="team1Goals" id="team1Goals"
+                                                           class="form-control"
+                                                           value="{{ bet.team1Goals }}"
+                                                           placeholder="0"
+                                                           {% if available== false %}
+                                                           disabled
+                                                           {% endif %}
+                                                    >
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <fieldset class="content-group">
+                                            <div class="form-group">
+                                                <label class="control-label col-lg-1" for="team2Goals">Aposta Gols {{ team2Name }}
+                                                    Goals: </label>
+                                                <div class="col-lg-3">
+                                                    <input type="text" name="team2Goals" id="team2Goals"
+                                                           class="form-control"
+                                                           value="{{ bet.team2Goals }}"
+                                                           placeholder="0"
+                                                           {% if available== false %}
+                                                           disabled
+                                                           {% endif %}
+                                                    >
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                </div><!-- tabContent -->
+                            </div><!-- tabbable -->
+                            <hr>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">Salvar informações <i
+                                        class="icon-arrow-right14 position-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

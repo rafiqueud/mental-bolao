@@ -1,0 +1,70 @@
+{% extends "../sources/index.peb" %}
+{% block title %}Dashboard Page{% endblock %}
+{% block headExtra %}{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><span class="text-semibold"></span>Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-detached">
+                    <div class="content-detached">
+                        <div class="panel panel-flat">
+
+
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Lista</h5>
+                            </div>
+                            <table class="table table-bordered table-hover datatable-highlight"
+                                   id="lista">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Flag</th>
+                                    <th>Country</th>
+                                    <th>cupsWins</th>
+                                    <th>continent</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for lM in teams %}
+                                <tr>
+                                    <td>{{ lM.name }}</td>
+                                    <td><img src="{{ lM.flag }}" width="30" height="30"/></td>
+                                    <td>{{ lM.country }}</td>
+                                    <td>{{ lM.cupsWins }}</td>
+                                    <td>{{ lM.continent }}</td>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                    <li><a href="/dashboard/teams/{{ lM.id }}"><i
+                                                            class="icon-pencil7"></i> Editar </a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

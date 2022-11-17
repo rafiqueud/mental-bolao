@@ -1,0 +1,80 @@
+{% extends "../sources/index.peb" %}
+{% block title %}Dashboard Page{% endblock %}
+{% block headExtra %}{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><span class="text-semibold"></span>Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-detached">
+                    <div class="content-detached">
+                        <div class="panel panel-flat">
+
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Lista</h5>
+                            </div>
+                            <table class="table table-bordered table-hover datatable-highlight"
+                                   id="lista">
+                                <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Data Legível</th>
+                                    <th>Time1</th>
+                                    <th>Time2</th>
+                                    <th>Etapa</th>
+                                    <th>Gols Time 1</th>
+                                    <th>Gols Time 2</th>
+                                    <th>Aposta Gols Time 1</th>
+                                    <th>Aposta Gols Time 2</th>
+                                    <th>Pontos Ganhos</th>
+                                    <th>Ações</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for lM in bets %}
+                                <tr>
+                                    <td>{{ lM.matchDateMillis }}</td>
+                                    <td>{{ lM.matchDate }}</td>
+                                    <td>{{ lM.team1Name }} <img src="{{ lM.team1Flag }}" width="30" height="30"/></td>
+                                    <td>{{ lM.team2Name }} <img src="{{ lM.team2Flag }}" width="30" height="30"/></td>
+                                    <td>{{ lM.stepName }}</td>
+                                    <td>{{ lM.team1Goals }}</td>
+                                    <td>{{ lM.team2Goals }}</td>
+                                    <td>{{ lM.betTeam1Goals }}</td>
+                                    <td>{{ lM.betTeam2Goals }}</td>
+                                    <td>{{ lM.points }}</td>
+
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                    <i class="icon-menu9"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li>
+                                                    <li><a href="/dashboard/bet/{{ lM.matchId }}"><i
+                                                            class="icon-pencil7"></i> Apostar/Editar Aposta </a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

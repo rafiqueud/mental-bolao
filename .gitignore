@@ -1,0 +1,9 @@
+# Default ignored files
+/workspace.xml
+.idea/
+target/
+*module-info.java
+.DS_Store
+*DS_Store
+DS_STORE
+.idea

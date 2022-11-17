@@ -1,0 +1,53 @@
+{% extends "../sources/index.peb" %}
+{% block title %} Login Page {% endblock %}
+{% block content %}
+<div class="page-container login-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="content">
+                {% if loginNotFound is not empty %}
+                <div class="alert alert-danger alert-styled-left alert-bordered">
+                    <button type="button" class="close" data-dismiss="alert"><span>×</span><span
+                            class="sr-only">Fechar</span></button>
+                    <span class="text-semibold">Informações incorretas!</span> tente novamente.
+                </div>
+                {% endif %}
+                <form action="/security/dashboard/login" method="post">
+                    <div class="panel panel-body login-form">
+                        <div class="text-center">
+                            <div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+                            <h5 class="content-group">Login de acesso
+                                <small class="display-block">Informe suas credenciais abaixo.</small>
+                                <small class="display-block">Username/Senha</small>
+                            </h5>
+                        </div>
+                        <div class="form-group has-feedback has-feedback-left">
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+                                   required/>
+                            <div class="form-control-feedback">
+                                <i class="icon-user text-muted"></i>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback has-feedback-left">
+                            <input type="password" name="password" id="password" class="form-control"
+                                   placeholder="password" required/>
+                            <div class="form-control-feedback">
+                                <i class="icon-lock2 text-muted"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="Login"/>
+                        </div>
+                    </div>
+                </form>
+                <!-- /simple login form -->
+            </div>
+            <!-- /content area -->
+        </div>
+        <!-- /main content -->
+    </div>
+    <!-- /page content -->
+</div>
+<!-- /page container -->
+{% endblock %}
+{% block footer %}{% endblock %}

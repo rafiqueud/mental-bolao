@@ -1,0 +1,56 @@
+{% extends "../sources/index.peb" %}
+{% block title %}Dashboard Page{% endblock %}
+{% block headExtra %}{% endblock %}
+{% block content %}
+<div class="page-container">
+    <div class="page-content">
+        <div class="content-wrapper">
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><span class="text-semibold"></span>Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-detached">
+                    <div class="content-detached">
+                        <div class="panel panel-flat">
+
+                            <div class="panel-heading">
+                                <h5 class="panel-title">Lista</h5>
+                            </div>
+                            <table class="table table-bordered table-hover datatable-highlight"
+                                   id="lista">
+                                <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Pontuação Total</th>
+                                    <th>Acertos(N. Gols + Vencedor)</th>
+                                    <th>Acertos(Vencedor)</th>
+                                    <th>Errouuuuu!</th>
+                                    <th>% de acertos</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for lM in rankings %}
+                                <tr>
+                                    <td>{{ lM.username }}</td>
+                                    <td>{{ lM.points }}</td>
+                                    <td>{{ lM.perfectMatches }}</td>
+                                    <td>{{ lM.wins }}</td>
+                                    <td>{{ lM.errors }}</td>
+                                    <td>{{ lM.winsPercent }}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
